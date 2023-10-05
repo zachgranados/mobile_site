@@ -1,0 +1,173 @@
+/* first is navigation links styling for mobile view*/
+/* first need to hide id of desktop links, since this is for mobile view */
+
+nav #desktopLinks{
+    display: none;
+}
+
+.desktopSkip{
+  display: none;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    font-family: Gabarito;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background: #333;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  a.active{
+    font-size: 150%;
+    font-family: Gabarito;
+    font-weight: bold;
+    text-align: center;
+  }
+/* -------------------- END OF NAV STYLING ----------------------------------*/
+
+#petsMain{
+  background-color: rgb(201, 201, 201);
+  box-sizing: border-box;
+}
+  
+/* hides h2 from user, but not from screen reader, h2 label is now visible on the pictures> */
+  /* .pets h2{
+    position: relative;
+    top: -500px;
+  } */
+.pets h2{
+  display: none;
+}
+
+/* creates a grid for the first pet on the site */
+.petOneGrid{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* border: solid 2px black; */
+}
+
+/* .petOneGrid > div {
+  border: solid 2px black;
+} */
+
+.petOneGrid .petPrimary {
+  grid-column: 1 / -1;
+}
+
+.petOneGrid .paragraph{
+  grid-column: 1 / -1;
+
+  font-family: Gabarito;
+
+  padding: 10px;
+  background-color: white;
+
+  margin-top: 10px;
+  margin-left: 10px; margin-right: 10px;
+
+  color:rgb(94, 92, 92);
+}
+
+.petOneGrid h3 {
+  margin-left: 15px;
+  font-family: Gabarito;
+}
+
+/* photo gallery slideshow  */
+
+.petOneGrid .petSlide {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.petSlide{
+  grid-column: 1 / 3;
+  width: 100%;
+}
+
+/* likes section */
+.petOneLikes{
+  grid-column-start: 3;
+  margin-left: 5px;
+  font-family: Gabarito;
+}
+
+.petOneLikes > li{
+  list-style-position: inside;
+}
