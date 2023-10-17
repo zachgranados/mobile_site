@@ -1,13 +1,33 @@
 /* first is navigation links styling for mobile view*/
 /* first need to hide id of desktop links, since this is for mobile view */
 
+h1 {
+  /* h1 is hidden out of sight because link is present in nav bar, this also serves for screen readers */
+
+  margin-top: -1000px;
+  margin-bottom: 900px;
+}
+
 nav #desktopLinks{
     display: none;
 }
 
 .desktopSkip{
-  display: none;
+  background: #2323e7;
+  height: 30px;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  color: white;
 }
+
+.desktopSkip:focus{
+  transform: translateY(150%);
+  text-decoration: underline;
+}
+
 
 .topnav {
     overflow: hidden;
@@ -40,9 +60,10 @@ nav #desktopLinks{
   }
   
   /* Add a grey background color on mouse-over */
-  .topnav a:hover {
+  .topnav a:hover, .topnav a:focus {
     background-color: #ddd;
     color: black;
+    text-decoration: underline;
   }
 
   a.active{
@@ -51,39 +72,41 @@ nav #desktopLinks{
     font-weight: bold;
     text-align: center;
   }
+
 /* -------------------- END OF NAV STYLING ----------------------------------*/
 
 #petsMain{
   background-color: rgb(201, 201, 201);
   box-sizing: border-box;
 }
-  
-/* hides h2 from user, but not from screen reader, h2 label is now visible on the pictures> */
-  /* .pets h2{
-    position: relative;
-    top: -500px;
-  } */
-.pets h2{
-  display: none;
-}
+
 
 /* creates a grid for the first pet on the site */
-.petOneGrid{
+.petGrid{
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
-  /* border: solid 2px black; */
+  border-bottom: 1px solid  rgba(62, 62, 62, 0.813);
 }
 
-/* .petOneGrid > div {
-  border: solid 2px black;
-} */
-
-.petOneGrid .petPrimary {
+.petGrid .petPrimary {
   grid-column: 1 / -1;
+  grid-row-start: 1;
+  margin-top: 5px;
 }
 
-.petOneGrid .paragraph{
+.petGrid h2{
+  grid-column: 2/3;
+  grid-row-start: 2;
+  font-family: Gabarito;
+  text-align: center;
+  font-size: 150%;
+  background-color: white;
+  margin-top: 10px;
+
+}
+
+.petGrid .paragraph{
   grid-column: 1 / -1;
 
   font-family: Gabarito;
@@ -97,24 +120,29 @@ nav #desktopLinks{
   color:rgb(94, 92, 92);
 }
 
-.petOneGrid h3 {
-  margin-left: 15px;
+.petGrid h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-family: Gabarito;
+  background-color: white;
 }
 
 /* photo gallery slideshow  */
 
-.petOneGrid .petSlide {
+.petGrid .petSlide {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-.slides {
+.slides, .slides2, .slides3, .slides4, .slides5 {
   display: none;
 }
 
-.prev, .next {
+.prev, .next, .prev2, .next2, .prev3, .next3,
+.prev4, .next4, .prev5, .next5 {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -127,15 +155,19 @@ nav #desktopLinks{
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: rgba(0,0,0,0.8);
 }
 
-.next {
+.next, .next2, .next3, .next4, .next5 {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover, .next:hover, .prev:focus, .next:focus, .prev2:hover, .next2:hover, .prev2:focus, .next2:focus,
+.prev3:hover, .next3:hover, .prev3:focus, .next3:focus 
+.prev4:hover, .next4:hover, .prev4:focus, .next4:focus 
+.prev5:hover, .next5:hover, .prev5:focus, .next5:focus{
+  border: 3px solid white;
 }
 
 .numbertext {
@@ -144,6 +176,8 @@ nav #desktopLinks{
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  background-color: black;
+
 }
 
 .fade {
@@ -158,16 +192,29 @@ nav #desktopLinks{
 
 .petSlide{
   grid-column: 1 / 3;
-  width: 100%;
+  width: 95%;
 }
 
 /* likes section */
-.petOneLikes{
+.petLikes{
   grid-column-start: 3;
   margin-left: 5px;
   font-family: Gabarito;
 }
 
-.petOneLikes > li{
-  list-style-position: inside;
+.petLikes h3{
+  margin-left: 0px;
+  text-align: center;
 }
+
+.petLikes ul{
+  list-style-position: inside;
+  list-style-type: circle;
+  background-color: white;
+  margin: 0px;
+
+
+  color:rgb(94, 92, 92);
+
+}
+
