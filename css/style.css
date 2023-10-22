@@ -1,3 +1,7 @@
+
+
+
+@media only screen and (min-width: 0px) {
 /* first is navigation links styling for mobile view*/
 /* first need to hide id of desktop links, since this is for mobile view */
 h1 {
@@ -70,6 +74,7 @@ nav #desktopLinks{
     text-align: center;
   }
 
+  
 /* -------------------- END OF NAV STYLING ----------------------------------*/
 
 #petsMain{
@@ -92,6 +97,13 @@ nav #desktopLinks{
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
+  background-color: white;
+  padding: 5px;
+  border: solid 2px black;
+}
+
+#petTop{
+  margin-top: 85px;
 }
 
 .petGrid h2{
@@ -123,13 +135,19 @@ padding: 30px;
 margin: 10px;
 
 color:rgb(94, 92, 92);
+max-height: 400px;
+/* max-width: 550px; */
+overflow: auto;
+}
+
+.text:focus{
+  overflow: visible;
+  background-color: white;
 }
 
 .petGrid .background{
   grid-column: 1 / -1;
   grid-row-start: 3;
-  min-height: 300px;
-  width: 100%;
   background-image:url("../images/dogs.jpg");
   background-repeat: no-repeat;
   margin-bottom: 5px; margin-top: 5px;
@@ -143,6 +161,8 @@ color:rgb(94, 92, 92);
   margin-right: 5px;
   font-family: Gabarito;
   background-color: white;
+  width: fit-content;
+  padding: 1px;
 }
 
 /* photo gallery slideshow  */
@@ -216,22 +236,24 @@ color:rgb(94, 92, 92);
   grid-column-start: 3;
   margin-left: 5px;
   font-family: Gabarito;
+  background-color: white;
+  height: fit-content;
+  overflow: auto;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 2%;
+  margin: 3px;
 }
 
 .petLikes h3{
-  margin-left: 0px;
+  padding-top: -500px;
   text-align: center;
 }
 
-.petLikes ul{
+.petLikes li{
   list-style-position: inside;
   list-style-type: circle;
-  background-color: white;
-  margin: 0px;
-
-
   color:rgb(94, 92, 92);
-
 }
 
 /* --------------- END OF PETS STYLING ----------------- */
@@ -257,6 +279,7 @@ color:rgb(94, 92, 92);
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: white;
+  border: 2px solid black;
   
 }
 
@@ -266,10 +289,14 @@ color:rgb(94, 92, 92);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
+  background-color: white;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5%;
 }
 
 #top{
-  margin-top: 75px;
+  margin-top: 85px;
 }
 
 .overview{
@@ -287,6 +314,7 @@ color:rgb(94, 92, 92);
 .ingredients{
   grid-column: 3/-1;
   grid-row-start: 3;
+  padding: 5px;
   margin: 5px;
   background-color: white;
 }
@@ -295,12 +323,37 @@ color:rgb(94, 92, 92);
   margin-bottom: 10px;
 }
 
+.stepsBackground {
+grid-row-start: 4;
+grid-column: 1/-1;
+
+
+width: 100%;
+background-image:url("../images/kitchen.jpg");
+background-repeat: no-repeat;
+margin: auto;
+margin-bottom: 5px; margin-top: 5px;
+
+}
+
 .steps{
-  grid-row-start: 4;
-  grid-column: 1/-1;
+padding: 10px;
+background-color: rgba(255, 255, 255, .8);
+border: 10px solid black;
+padding: 10px;
+margin: 2px;
+
+color:rgb(94, 92, 92);
+margin: 15px;
+max-height: 250px;
+overflow: auto;
+  
+}
+
+.steps:focus {
+  overflow: visible;
   background-color: white;
-  padding: 5px;
-  margin: 5px;
+  max-height: fit-content;
 }
 
 .steps h3 {
@@ -319,12 +372,38 @@ color:rgb(94, 92, 92);
   display: inline-block;
 }
 
+.photoGallery img{
+  display: inline-block;
+  max-width: 45%;
+  margin: 5px;
+  background-color: white;
+  padding: 2px;
+  border: solid black 2px;
+}
+
 .photoGallery h3{
   text-align: center;
   background-color: white;
-  width: 65%;
+  width: 25%;
   margin: auto;
   margin-bottom: 5px;
+  border: 2px solid black;
+}
+
+#big{
+  max-height: 250px;
+}
+
+
+
+
+/* REDUCES MOTION */
+@media screen and (prefers-reduced-motion: reduce){
+  .fade {animation: none;}
+}
+
+/* ADD GIF */
+
 }
 
 
@@ -336,10 +415,17 @@ color:rgb(94, 92, 92);
 
 /* ------------------ END OF MOBILE VIEW ----------------- */
 
-/* @media only screen and (min-width: 600px) {} */
+ /* @media only screen and (min-width: 600px) {
+*{
+  background-color: blue;
+}
+} */
+
+
 
 /* ------------------ END OF TABLET VIEW ----------------- */
 
 /* @media only screen and (min-width: 768px) {} */
 
 /* ------------------ END OF DESKTOP VIEW ----------------- */
+
