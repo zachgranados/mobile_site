@@ -422,6 +422,11 @@ overflow: auto;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+/* .one , .two{
+  width: 85%;
+  margin: auto;
+} */
+
 .location{
 grid-column: 2/3;
 grid-row-start: 1;
@@ -456,6 +461,10 @@ margin-top: 85px;
   padding: 5px;
   background-color: #d4d1d1;
   border: 2px solid #636262;
+  width: fit-content;
+}
+
+#auckland{
   width: 100%;
 }
 
